@@ -1,0 +1,16 @@
+version: '3'
+
+volumes:
+  python-workbook-02-pg-db:
+
+services:
+  python-workbook-02-pg:
+    image: postgres:alpine
+    ports:
+      - "54320:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=sampledb
+    volumes:
+      - python-workbook-02-pg-db:/var/lib/postgresql/data/
